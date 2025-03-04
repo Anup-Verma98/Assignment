@@ -1,0 +1,270 @@
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.roadmap-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.roadmap-path {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+
+.path-line {
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  z-index: 1;
+  background: linear-gradient(to bottom, #3a3a3a, #3a3a3a);
+  transition: background-image 0.5s ease-in-out;
+
+}
+
+.lesson-nodes {
+  position: relative;
+  z-index: 2;
+}
+
+.lesson-node {
+  display: flex;
+  margin-bottom: 6rem;
+  position: relative;
+  align-items: center;
+}
+
+.lesson-node:nth-child(odd) {
+  flex-direction: row;
+}
+
+.lesson-node:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.node-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+  border: 6px solid grey;
+}
+
+.node-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+}
+
+.node-circle.completed {
+  background: linear-gradient(135deg, #ec4899, #6b21a8, #3b82f6);
+  border-color: white;
+
+}
+
+.node-circle.active {
+  background-color: #3a3a3a;
+  animation: pulse 2s infinite;
+  border-color: white;
+}
+
+.node-icon {
+  width: 60px;
+  height: 60px;
+  color: #2a2a2a;
+  fill: #2a2a2a;
+}
+
+.node-icon.completed {
+  color: #ffffff;
+  fill: none;
+  width: 40px;
+  height: 40px;
+}
+
+
+.node-content {
+  flex: 1;
+  padding: 1rem;
+  max-width: 300px;
+}
+
+.lesson-node:nth-child(odd) .node-content {
+  margin-right: 2rem;
+  text-align: right;
+}
+
+.lesson-node:nth-child(even) .node-content {
+  margin-left: 2rem;
+  text-align: left;
+}
+
+.lesson-tag {
+  display: inline-block;
+  background-color: #6b21a8;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.lesson-description {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+}
+
+.view-certificate {
+  position: absolute;
+  right: 2rem;
+  top: 5%;
+  width: 90px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50%;
+  font-size: 10px;
+  background: linear-gradient(135deg, #6b21a8, #ec4899);
+  color: white;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.view-certificate:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.dummy-certificate {
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.avatar {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f97316;
+  border: 3px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: top 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
+}
+
+.avatar-icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #ec4899;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+/* Media queries */
+
+@media (max-width: 768px) {
+  .view-certificate {
+    width: 60px;
+    right: 1rem;
+
+    .dummy-certificate {
+      font-size: 0.45rem;
+    }
+  }
+
+  .path-line,
+  .avatar {
+    left: 30px;
+    transform: none;
+  }
+
+  .lesson-node {
+    flex-direction: row !important;
+    margin-left: 30px;
+  }
+
+  .lesson-node:nth-child(odd) .node-content,
+  .lesson-node:nth-child(even) .node-content {
+    margin-left: 2rem;
+    margin-right: 0;
+    text-align: left;
+  }
+}

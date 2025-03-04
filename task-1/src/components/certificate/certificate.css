@@ -1,0 +1,71 @@
+.course-completion-overlay {
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    height: 100%;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+
+.course-completion-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    border: 8px solid #d4af37;
+    position: relative;
+    top: 15%;
+}
+
+.brand {
+    margin-bottom: 20px;
+}
+
+.certificate-content {
+    color: black;
+}
+
+.certificate-content h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recipient-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.course-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.seal {
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+    background: #d4af37;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
