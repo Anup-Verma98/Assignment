@@ -11,7 +11,6 @@ interface ILesson {
 interface IToastProps {
   isVisible: boolean;
   lessonData: ILesson | null;
-  // isFinalCourseCompleted: boolean;
 }
 
 export const Toast: React.FC<IToastProps> = (props) => {
